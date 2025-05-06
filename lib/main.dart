@@ -1,5 +1,3 @@
-// lib/main.dart
-
 import 'package:chiva_experiences/common/custom_bottom_nav_bar.dart';
 import 'package:chiva_experiences/common/top_bar.dart';
 import 'package:chiva_experiences/features/categorias/categoria_screen.dart';
@@ -15,17 +13,14 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final pages = [
       CategoriaScreen(),
       MapaScreen(),
       HomeScreen(),
-      PerfilScreen()
+      PerfilScreen(),
     ];
 
-    return MaterialApp(
-      home: Home(pages: pages),
-    );
+    return MaterialApp(home: Home(pages: pages));
   }
 }
 

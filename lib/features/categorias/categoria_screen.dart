@@ -1,29 +1,40 @@
-// lib/features/categorias/categoria_screen.dart
-
 import 'package:flutter/material.dart';
 import 'domain/categoria.dart';
 import 'routes/categoria_details.dart';
 import 'widgets/catergoria_cart.dart';
 
-/// Pantalla principal de categorías, similar a HomeInitial
 class CategoriaScreen extends StatelessWidget {
   const CategoriaScreen({Key? key}) : super(key: key);
 
-  /// Lista quemada de categorías
   List<Category> get _categories => const [
-        Category(name: 'Comida', icon: Icons.restaurant, color: Colors.orangeAccent),
-        Category(name: 'Eventos', icon: Icons.event, color: Colors.pinkAccent),
-        Category(name: 'Cultura', icon: Icons.museum, color: Colors.purpleAccent),
-        Category(name: 'Entretenimiento', icon: Icons.movie, color: Colors.blueAccent),
-        Category(name: 'Aventura', icon: Icons.directions_bike, color: Colors.greenAccent),
-        Category(name: 'Naturaleza', icon: Icons.park, color: Colors.tealAccent),
-      ];
+    Category(
+      name: 'Comida',
+      icon: Icons.restaurant,
+      color: Colors.orangeAccent,
+    ),
+    Category(name: 'Eventos', icon: Icons.event, color: Colors.pinkAccent),
+    Category(name: 'Cultura', icon: Icons.museum, color: Colors.purpleAccent),
+    Category(
+      name: 'Entretenimiento',
+      icon: Icons.movie,
+      color: Colors.blueAccent,
+    ),
+    Category(
+      name: 'Aventura',
+      icon: Icons.directions_bike,
+      color: Colors.greenAccent,
+    ),
+    Category(name: 'Naturaleza', icon: Icons.park, color: Colors.tealAccent),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Categorías', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Categorías',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         elevation: 2,
         backgroundColor: Colors.white,

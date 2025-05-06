@@ -36,18 +36,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
         builder: (BuildContext context, SearchController controller) {
           return SearchBar(
             controller: controller,
-            padding: const MaterialStatePropertyAll<EdgeInsets>(
-              EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const WidgetStatePropertyAll<EdgeInsets>(
+              EdgeInsets.symmetric(horizontal: 10.0),
             ),
             onTap: () => controller.openView(),
             onChanged: (_) => controller.openView(),
             leading: const Icon(Icons.search),
-            trailing: const <Widget>[
-              Tooltip(
-                message: 'Change brightness mode',
-                child: Icon(Icons.data_array),
-              ),
-            ],
           );
         },
         suggestionsBuilder: (BuildContext context, SearchController controller) {

@@ -15,13 +15,12 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Reordenamos para que coincida con:
-    // 0: Categoria, 1: Mapa, 2: Home, 3: Perfil
-    final pages = <Widget>[
+
+    final pages = [
       CategoriaScreen(),
       MapaScreen(),
       HomeScreen(),
-      PerfilScreen(),
+      PerfilScreen()
     ];
 
     return MaterialApp(
@@ -39,7 +38,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {

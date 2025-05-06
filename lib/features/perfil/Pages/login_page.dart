@@ -14,13 +14,12 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Sign \nUp".toUpperCase(),
+                "Log \nIn".toUpperCase(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black26,
                   fontSize: 60,
                   fontWeight: FontWeight.bold,
-                  //fontFamily: "Impact",
                 ),
               ),
               SizedBox(height: 35.0),
@@ -29,10 +28,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // ignore: unused_element
-                      setState() {
-                        print("2");
-                      }
+                      Navigator.pushNamed(context, "signup");
                     },
                     child: Text(
                       'Sign Up',
@@ -57,11 +53,10 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 25.0),
-              _textFieldName(),
               _textFieldEmail(),
               _textFieldPassword(),
               SizedBox(height: 20.0),
-              _buttonLogin(),
+              _buttonLogin(context),
             ],
           ),
         ),
@@ -69,15 +64,6 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _textFieldName() {
-    return TextFieldGeneral(
-      labelText: 'Name',
-      hintText: 'Enter your name',
-      icon: Icons.person_outline,
-      onChanged: (onChanged) {},
-      keyboardType: TextInputType.text,
-    );
-  }
 
   Widget _textFieldEmail() {
     return TextFieldGeneral(
@@ -100,25 +86,21 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buttonLogin() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.brown,
-          padding: const EdgeInsets.all(16.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-        ),
-        child: const Text(
-          'Login',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
+ Widget _buttonLogin(BuildContext context) {  // Added missing parenthesis
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: ElevatedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, '/home'); // Redirige a HomeScreen
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.brown,
+        padding: const EdgeInsets.all(16.0),
       ),
-    );
-  }
+      child: const Text('Login'),
+    ),
+  );
+}
 }
 
 class TextFieldGeneral extends StatelessWidget {

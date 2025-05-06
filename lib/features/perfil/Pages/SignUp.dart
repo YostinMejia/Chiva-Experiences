@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Pages/login_page.dart'; 
+// import 'package:myapp/Pages/login_page.dart'; 
 
 class SignUpPage extends StatelessWidget {
   static String id = "signUp_page";
@@ -16,7 +16,7 @@ class SignUpPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login".toUpperCase(),
+                "Sign \nUp".toUpperCase(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black26,
@@ -30,7 +30,7 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, LoginPage.id);
+                      // Navigator.pushNamed(context, LoginPage.id);
                     },
                     child: const Text(
                       'Sign Up',
@@ -60,7 +60,7 @@ class SignUpPage extends StatelessWidget {
               _textFieldEmail(),
               _textFieldPassword(),
               const SizedBox(height: 20.0),
-              _buttonLogin(),
+              _buttonLogin(context),
             ],
           ),
         ),
@@ -89,25 +89,21 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Widget _buttonLogin() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.brown,
-          padding: const EdgeInsets.all(16.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-        ),
-        child: const Text(
-          'Login',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
+   Widget _buttonLogin(BuildContext context) {  
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: ElevatedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, '/home'); 
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.brown,
+        padding: const EdgeInsets.all(16.0),
       ),
-    );
-  }
+      child: const Text('Login'),
+    ),
+  );
+}
 }
 
 class TextFieldGeneral extends StatelessWidget {
